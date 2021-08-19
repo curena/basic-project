@@ -1,0 +1,7 @@
+#!/Users/cecilurena/.sdkman/candidates/java/16.0.1.j9-adpt/bin/java --source 16
+
+public class MyClass {
+ public static void main(String[] args) {
+   System.out.println("Hello, World");  
+ }
+}
