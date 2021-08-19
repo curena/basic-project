@@ -5,17 +5,13 @@ import spock.lang.Specification
 class ArrayOperationsSpec extends Specification {
     def arrayOperations = new ArrayOperations()
 
-    def setup() {
-
-    }
-
     def "should return a sorted array"() {
         given:
-        def input = [2, 4, 1] as int[]
-        def expectedOutput = [1, 2, 4] as int[]
+        final def input = [2, 4, 1] as Integer[]
+        final def expectedOutput = [1, 2, 4] as Integer[]
 
         when:
-        def observedOutput = arrayOperations.sortArray(input)
+        final def observedOutput = arrayOperations.sortArray(input)
 
         then:
         observedOutput == expectedOutput
