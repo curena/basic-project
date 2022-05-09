@@ -3,10 +3,6 @@ package org.cecil.basic.arrays
 import spock.lang.Specification
 
 class ArrayOperationsSpec extends Specification {
-    def setup() {
-
-    }
-
     def "should return a sorted array"() {
         given:
         def input = [2, 4, 1] as int[]
@@ -17,7 +13,7 @@ class ArrayOperationsSpec extends Specification {
         arrayOperations.sortArray()
 
         then:
-        arrayOperations.getArray() == expectedOutput
+        arrayOperations.array() == expectedOutput
     }
 
 }
