@@ -1,22 +1,19 @@
 plugins {
-	id 'org.springframework.boot' version '3.0.4'
-	id 'io.spring.dependency-management' version '1.1.0'
+	id 'org.springframework.boot' version '3.2.1'
+	id 'io.spring.dependency-management' version '1.1.4'
 	id 'java'
 	id 'groovy'
-	id 'io.freefair.lombok' version '6.6.1'
+	id 'io.freefair.lombok' version '8.4'
 }
 
 group = 'org.cecil.basic'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_21
 
-def springBootVersion = '3.0.4'
-def springVersion = '6.0.6'
-def spockVersion = '2.3-groovy-4.0'
-def lombokVersion = '1.18.24'
-def groovyVersion = '4.0.6'
-def easyRandomVersion = '5.0.0'
-def javaFakerVersion = '1.0.2'
+final def spockVersion = '2.3-groovy-4.0'
+final def lombokVersion = '1.18.30'
+final def groovyVersion = '4.0.17'
+final def dataFakerVersion = '2.0.2'
 
 configurations {
 	compileOnly {
@@ -30,16 +27,15 @@ repositories {
 
 dependencies {
 	implementation "org.apache.groovy:groovy:${groovyVersion}"
-	implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+	implementation "org.springframework.boot:spring-boot-starter"
 	compileOnly "org.projectlombok:lombok:${lombokVersion}"
 	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-	testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
 	testImplementation("org.spockframework:spock-core:${spockVersion}") {
 		exclude group: 'org.codehaus.groovy'
 	}
 	testImplementation "org.spockframework:spock-spring:${spockVersion}"
-	testImplementation "org.jeasy:easy-random-core:${easyRandomVersion}"
-	testImplementation "com.github.javafaker:javafaker:${javaFakerVersion}"
+	testImplementation "net.datafaker:datafaker:${dataFakerVersion}"
 }
 
 test {
